@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Lock, Unlock, ShieldCheck, Plus, Trash2, Info, ArrowRight, Upload, Download, Copy, Check } from 'lucide-react';
 import { CryptoAlgorithm, CryptoLayer } from '@/lib/crypto';
 import Link from 'next/link';
@@ -70,6 +70,16 @@ export default function Home() {
     setter(true);
     setTimeout(() => setter(false), 2000);
   };
+
+  // Easter Egg
+  useEffect(() => {
+    console.log(`
+  /\\_/\\  
+ ( o.o ) 
+  > ^ <  
+   Nivek 
+    `);
+  }, []);
 
   const addLayer = () => {
     if (layers.length < 5) {
